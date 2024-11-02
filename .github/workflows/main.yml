@@ -14,6 +14,7 @@ jobs:
         run: echo build!
 
   dev-deployment:
+    needs: build
     runs-on: ubuntu-latest
     environment: dev
     steps:
@@ -22,6 +23,7 @@ jobs:
         run: echo dev!
 
   uat-deployment:
+    needs: dev-deployment
     runs-on: ubuntu-latest
     environment: uat
     steps:
