@@ -12,18 +12,18 @@ jobs:
       - name: PR build
         run: echo pr build!
 
-    dev-deployment:
-      runs-on: ubuntu-latest
-      environment: dev
-      steps:
-        - uses: actions/checkout@v4
-        - name: PR dev
-          run: echo pr dev!
+  dev-deployment:
+    runs-on: ubuntu-latest
+    environment: dev
+    steps:
+      - uses: actions/checkout@v4
+      - name: PR dev
+        run: echo pr dev!
 
-    uat-deployment:
-      runs-on: ubuntu-latest
-      environment: uat
-      steps:
-        - uses: actions/checkout@v4
-        - name: PR uat
-          run: echo pr uat!
+  uat-deployment:
+    runs-on: ubuntu-latest
+    environment: uat
+    steps:
+      - uses: actions/checkout@v4
+      - name: PR uat
+        run: echo pr uat!
