@@ -1,0 +1,25 @@
+name: deploy-pr
+
+on:
+  workflow_dispatch:
+    environment:
+      description: 'Environment deploy'
+      type: environment
+      required: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: PR build
+        run: echo pr build!
+
+  deployment:
+    needs: build
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: PR ${{ inputs.environment }}
+        run: echo pr ${{ inputs.environment }} !
