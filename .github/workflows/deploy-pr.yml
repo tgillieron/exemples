@@ -2,10 +2,11 @@ name: deploy-pr
 
 on:
   workflow_dispatch:
-    environment:
-      description: 'Environment deploy'
-      type: environment
-      required: true
+    inputs:
+      environment:
+        description: 'Environment deploy'
+        type: environment
+        required: true
 
 jobs:
   build:
