@@ -1,0 +1,14 @@
+name: release
+
+on:
+  tags:
+    branches: [ "main" ]
+
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+    environment: prod
+    steps:
+      - uses: actions/checkout@v4
+      - name: deploy prod
+        run: echo deploy prod!
